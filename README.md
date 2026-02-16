@@ -2,6 +2,8 @@
 
 Turn [Claude Code](https://docs.anthropic.com/en/docs/claude-code) into a personal operating system for your [Obsidian](https://obsidian.md) vault. Three daily skills — `/start`, `/sync`, and `/end-of-day` — handle your morning briefing, mid-day processing, and end-of-day filing, all powered by Claude Code's tool use with Google Calendar, Gmail, and Google Tasks via MCP.
 
+I based the system on, and was inspired to get started by, this post by https://michaelcrist.substack.com/ : https://substack.com/inbox/post/184955320
+
 ## How It Works
 
 You keep an Obsidian vault as your second brain. Throughout the day, you drop notes into a **Scratch Pad**. Claude Code processes everything through three rituals:
