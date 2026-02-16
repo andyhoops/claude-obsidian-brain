@@ -1,0 +1,162 @@
+# Sync
+
+Today's date: `!date +%Y-%m-%d`
+Current time: `!date +%H:%M`
+
+You're my assistant processing a pile of loose notes. Read everything, file it where it belongs, and give me a quick debrief. Be thorough but don't over-organize — match the level of detail I wrote with the level of detail you file.
+
+---
+
+## Step 1: Read Scratch Pad
+
+Read `Scratch Pad.md`. Note its contents for processing in the steps below.
+
+If it's empty or only whitespace, note that and move on — there may still be new meetings to process.
+
+## Step 2: Check for New Meeting Transcripts
+
+List all files in `Meetings/`. Read `.claude/context.md` to check the `## Meetings Processed` section for which files have already been processed in a previous sync.
+
+For each **unprocessed** meeting file:
+1. Read the file
+2. Append a concise summary to today's daily note (see Step 7 format)
+3. Extract any action items or decisions into the task list (Step 4)
+4. File any reference knowledge — product decisions, customer info, people updates — into the appropriate location under `Filing Cabinet/`
+5. Mark the file as processed by adding it to the `## Meetings Processed` list in `.claude/context.md`
+
+If there are no new meetings, skip this step.
+
+## Step 3: Check Google Calendar
+
+Use the Google Workspace MCP to review the remainder of today's calendar from my primary calendar (`your-email@example.com`).
+
+- List today's remaining events (from the current time onward)
+- Ignore working-location events (type `workingLocation`)
+- **External attendee check:** Flag any meetings where attendees have email addresses that are NOT `@your-domain.com` — these are usually customer or partner meetings and may need prep
+- Note if any new meetings have appeared since the start-of-day briefing (compare against the daily note's start-of-day calendar section if it exists)
+- If a meeting is coming up within the next 2 hours, call it out as imminent
+
+Use this to inform task prioritisation — imminent meeting prep should bubble up, and if the rest of the day is meeting-heavy, flag limited time for deep work.
+
+## Step 4: Update Task Board
+
+Gather all action items found in the scratch pad and any new meeting transcripts. Append them to `Task Board.md` under a time-stamped section:
+
+```
+## YYYY-MM-DD HH:MM
+
+- [ ] Action item description
+- [ ] Another action item
+```
+
+If `Task Board.md` already has a section for this exact timestamp, append to it. Otherwise create a new section at the end.
+
+**Sharpen vague items** into concrete next actions. "Talk to Sarah about the timeline" → "Follow up with Sarah on project timeline and confirm delivery dates."
+
+**What counts as an action item:** anything with an implied "I need to do X" — tasks, follow-ups, reminders, scheduling needs, pending reviews, decisions to make.
+
+If there are no action items from any source, skip this step.
+
+## Step 5: Sync Google Tasks
+
+Use the Google Workspace MCP to reconcile the Task Board with Google Tasks:
+
+1. **Pull new tasks:** List all Google Tasks. If any are not yet on the Task Board, add them with a `[GTask]` label.
+2. **Push completions:** Scan the Task Board for completed items (lines with `- [x]`) that have a `[GTask]` label or match a Google Task by title. Mark the corresponding Google Task as complete via the MCP.
+3. **Push new items:** If Task Board items were explicitly tagged `[GTask]` when created (i.e., the user wants them in Google Tasks too), create them in Google Tasks.
+
+Don't over-match — only mark a Google Task complete if you're confident the Task Board item corresponds to it. When in doubt, flag it in the debrief for my review.
+
+## Step 6: File Knowledge
+
+Identify any **reference knowledge** from the scratch pad or meetings — facts, product notes, customer info, people updates, or project context worth preserving.
+
+Create or update the appropriate file under `Filing Cabinet/`:
+- People/team notes → `Filing Cabinet/People/<name>.md`
+- Project notes → `Filing Cabinet/Projects/<project>/<file>.md`
+- Other reference material → create appropriate subfolders under `Filing Cabinet/` as needed
+
+<!-- CUSTOMIZATION: Add your own Filing Cabinet categories here. For example:
+- Product notes → Filing Cabinet/Products/<product>/<file>.md
+- Customer notes → Filing Cabinet/Customers/<customer>.md
+- Research → Filing Cabinet/Research/<topic>.md
+See Filing Cabinet/README.md for guidance on organizing your categories. -->
+
+Use Obsidian conventions: wiki-links `[[like this]]`, tags, and frontmatter where appropriate. When updating an existing file, append or merge — don't overwrite existing content.
+
+If everything is purely actionable with no reference knowledge, skip this step.
+
+## Step 7: Update Daily Note
+
+Append a sync entry to `Daily Notes/YYYY-MM-DD.md`. If the file doesn't exist, create it with a `# YYYY-MM-DD` heading first.
+
+Format:
+
+```
+### Sync — HH:MM
+
+**From scratch pad:**
+- Brief summary of what was captured (or "Nothing new")
+
+**From meetings:**
+- Meeting title → summary of key points (or "No new meetings")
+
+**Calendar update:**
+- Any new/changed meetings since last check
+- Upcoming meetings for rest of day (flag [External] where applicable)
+- (or "No changes")
+
+**Actions added:** <count> items to Task Board (or "None")
+**Google Tasks:** <count> completed, <count> new pulled in (or "No changes")
+**Knowledge filed:** <where, or "None">
+```
+
+Multiple syncs per day should stack as separate entries — never overwrite earlier ones.
+
+## Step 8: Clear Scratch Pad
+
+Once everything from `Scratch Pad.md` has been processed and filed, reset it to:
+
+```
+# Scratch Pad
+```
+
+Only clear it if there was content to process. If it was already empty, leave it alone.
+
+## Step 9: Update Context Memory
+
+Update `.claude/context.md` with any new priorities, open threads, or context from this sync. Merge with existing content — don't wipe previous entries. Remove items only if they're clearly resolved.
+
+The file should always maintain this structure:
+
+```markdown
+# Context Memory
+
+_Last updated: YYYY-MM-DD HH:MM_
+
+## Current Priorities
+- ...
+
+## Open Threads
+- ...
+
+## Recent Context
+- ...
+
+## Meetings Processed
+- filename.md (YYYY-MM-DD)
+- ...
+```
+
+---
+
+## Output
+
+Give me a quick debrief — like an assistant handing back a sorted stack:
+- What you found in the scratch pad
+- Any meetings processed and key takeaways
+- Calendar check: new meetings, imminent meetings, or external meetings needing prep
+- Google Tasks sync: completions pushed, new tasks pulled
+- How many actions were filed
+- Where knowledge was routed
+- Anything ambiguous that needs my input

@@ -1,0 +1,16 @@
+# Obsidian
+.obsidian/
+
+# MCP credentials (the .example file is safe to commit)
+.mcp.json
+vault/.mcp.json
+
+# Claude Code local state
+.claude/settings.local.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Attachments (large binaries)
+vault/attachments/
