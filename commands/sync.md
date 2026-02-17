@@ -61,11 +61,12 @@ If there are no action items from any source, skip this step.
 
 Use the Google Workspace MCP to reconcile the Task Board with Google Tasks:
 
-1. **Pull new tasks:** List all Google Tasks. If any are not yet on the Task Board, add them with a `[GTask]` label.
-2. **Push completions:** Scan the Task Board for completed items (lines with `- [x]`) that have a `[GTask]` label or match a Google Task by title. Mark the corresponding Google Task as complete via the MCP.
-3. **Push new items:** If Task Board items were explicitly tagged `[GTask]` when created (i.e., the user wants them in Google Tasks too), create them in Google Tasks.
+1. **Pull new tasks:** List all Google Tasks (incomplete). If any are not yet on the Task Board, add them with a `[GTask]` label.
+2. **Pull completions:** For each task list, also query with `show_completed=true` and `completed_min` set to 24 hours ago. If a recently completed Google Task matches an open `[GTask]` item on the Task Board (by title), mark that Task Board item as `[x]`. This is essential — the user often completes tasks directly in Google Tasks.
+3. **Push completions:** Scan the Task Board for completed items (lines with `- [x]`) that have a `[GTask]` label or match an incomplete Google Task by title. Mark the corresponding Google Task as complete via the MCP.
+4. **Push new items:** If Task Board items were explicitly tagged `[GTask]` when created (i.e., the user wants them in Google Tasks too), create them in Google Tasks.
 
-Don't over-match — only mark a Google Task complete if you're confident the Task Board item corresponds to it. When in doubt, flag it in the debrief for my review.
+Don't over-match — only sync a completion if you're confident the titles correspond. When in doubt, flag it in the debrief for my review.
 
 ## Step 6: File Knowledge
 
