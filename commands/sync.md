@@ -25,6 +25,7 @@ For each **unprocessed** meeting file:
 3. Extract any action items or decisions into the task list (Step 4)
 4. File any reference knowledge — product decisions, customer info, people updates — into the appropriate location under `Filing Cabinet/`
 5. Mark the file as processed by adding it to the `## Meetings Processed` list in `.claude/context.md`
+6. **Archive one-off meeting files:** If the filename starts with a date prefix (e.g., `2026-02-18 NBCU Proposal Review.md`), it's a one-off — move it to `Meetings/archive/YYYY-MM/` after processing. Create the month folder if it doesn't exist. Files without a date prefix are recurring docs and stay in `Meetings/`.
 
 If there are no new meetings, skip this step.
 
