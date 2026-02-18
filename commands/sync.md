@@ -7,11 +7,13 @@ You're my assistant processing a pile of loose notes. Read everything, file it w
 
 ---
 
-## Step 1: Read Scratch Pad
+## Step 1: Read Scratch Pad & Mobile Inbox
 
 Read `Scratch Pad.md`. Note its contents for processing in the steps below.
 
-If it's empty or only whitespace, note that and move on — there may still be new meetings to process.
+If it's empty or only whitespace, note that and move on — there may still be new meetings or mobile notes to process.
+
+Also check the **"Mobile Inbox"** Google Tasks list (`your-email@example.com`) for any quick-capture notes from mobile. Read each task's title and notes. Treat these exactly like Scratch Pad entries — they feed into the same action item extraction (Step 4) and knowledge filing (Step 6) pipeline. After processing, mark each Mobile Inbox task as complete to clear the list.
 
 ## Step 2: Check for New Meeting Transcripts
 
@@ -40,7 +42,7 @@ Use this to inform task prioritisation — imminent meeting prep should bubble u
 
 ## Step 4: Update Task Board
 
-Gather all action items found in the scratch pad and any new meeting transcripts. Append them to `Task Board.md` under a time-stamped section:
+Gather all action items found in the scratch pad, mobile inbox, and any new meeting transcripts. Append them to `Task Board.md` under a time-stamped section:
 
 ```
 ## YYYY-MM-DD HH:MM
@@ -96,7 +98,7 @@ Format:
 ```
 ### Sync — HH:MM
 
-**From scratch pad:**
+**From scratch pad / mobile inbox:**
 - Brief summary of what was captured (or "Nothing new")
 
 **From meetings:**
@@ -116,7 +118,7 @@ Multiple syncs per day should stack as separate entries — never overwrite earl
 
 ## Step 8: Clear Scratch Pad
 
-Once everything from `Scratch Pad.md` has been processed and filed, reset it to:
+Once everything from `Scratch Pad.md` has been processed and filed (and Mobile Inbox tasks marked complete), reset the scratch pad to:
 
 ```
 # Scratch Pad
@@ -154,7 +156,7 @@ _Last updated: YYYY-MM-DD HH:MM_
 ## Output
 
 Give me a quick debrief — like an assistant handing back a sorted stack:
-- What you found in the scratch pad
+- What you found in the scratch pad and mobile inbox
 - Any meetings processed and key takeaways
 - Calendar check: new meetings, imminent meetings, or external meetings needing prep
 - Google Tasks sync: completions pushed, new tasks pulled

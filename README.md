@@ -17,11 +17,12 @@ You keep an Obsidian vault as your second brain. Throughout the day, you drop no
 **Data flow:**
 
 ```
-Scratch Pad → /sync or /end-of-day → Task Board + Filing Cabinet + Daily Note
-                                       ↕
-                                  Google Tasks (two-way sync)
-                                  Google Calendar (read)
-                                  Gmail (read + draft)
+Scratch Pad ─────┐
+                  ├→ /sync or /end-of-day → Task Board + Filing Cabinet + Daily Note
+Mobile Inbox ────┘                           ↕
+(Google Tasks)                          Google Tasks (two-way sync)
+                                        Google Calendar (read)
+                                        Gmail (read + draft)
 ```
 
 Context memory (`.claude/context.md`) carries priorities and open threads forward between sessions so each day starts informed.
@@ -138,28 +139,29 @@ your-vault/
 **When:** Start of each work day
 
 **What it does:**
-1. Reads context memory for carry-forward priorities
-2. Reviews the Task Board for open items
-3. Checks yesterday's daily note for loose ends
-4. Pulls today's calendar and next 2 days for lookahead
-5. Scans Gmail (last 7 days) for missed actions, unanswered questions, commitments
-6. Lists Google Tasks and cross-references with Task Board
-7. Presents a prioritized morning briefing
-8. Creates today's daily note with confirmed priorities (after your response)
+1. Checks the Mobile Inbox (Google Tasks list) for notes captured on mobile
+2. Reads context memory for carry-forward priorities
+3. Reviews the Task Board for open items
+4. Checks yesterday's daily note for loose ends
+5. Pulls today's calendar and next 2 days for lookahead
+6. Scans Gmail (last 7 days) for missed actions, unanswered questions, commitments
+7. Lists Google Tasks and cross-references with Task Board
+8. Presents a prioritized morning briefing
+9. Creates today's daily note with confirmed priorities (after your response)
 
 ### `/sync` — Mid-Day Processing
 
 **When:** After dropping notes in Scratch Pad, or after meetings
 
 **What it does:**
-1. Reads and processes Scratch Pad contents
+1. Reads and processes Scratch Pad contents and Mobile Inbox
 2. Processes any new meeting transcripts in `Meetings/`
 3. Checks remaining calendar for the day
 4. Extracts action items to Task Board
-5. Syncs Google Tasks (pull new, push completions)
+5. Syncs Google Tasks (pull new, pull completions, push completions)
 6. Files reference knowledge to Filing Cabinet
 7. Appends a sync entry to today's daily note
-8. Clears the Scratch Pad
+8. Clears the Scratch Pad and marks Mobile Inbox items complete
 9. Updates context memory
 
 ### `/end-of-day` — EOD Filing
@@ -167,11 +169,11 @@ your-vault/
 **When:** End of each work day
 
 **What it does:**
-1. Reads Scratch Pad contents
+1. Reads Scratch Pad contents and Mobile Inbox
 2. Extracts final action items to Task Board
 3. Files remaining knowledge to Filing Cabinet
 4. Appends EOD summary to daily note
-5. Syncs Google Tasks
+5. Syncs Google Tasks (including two-way completions)
 6. Archives Scratch Pad to `archive/scratch-pad/`
 7. Updates context memory for tomorrow
 
@@ -260,6 +262,7 @@ If you're on a headless machine or WSL, set `OAUTHLIB_INSECURE_TRANSPORT=1` in t
 ## Tips
 
 - **Scratch Pad is your inbox.** Don't organize — just dump. The skills will sort it.
+- **Mobile Inbox for on-the-go capture.** Create a "Mobile Inbox" list in Google Tasks and add a shortcut to your phone's home screen. All three skills check it and process entries the same way as the Scratch Pad.
 - **Drop meeting notes in `Meetings/`** with the date in the filename (e.g., `2025-01-15 Team Sync.md`). The `/sync` skill will process them automatically.
 - **Tag tasks with `[GTask]`** if you want them pushed to Google Tasks for mobile access.
 - **Context memory is automatic.** You don't need to maintain `.claude/context.md` manually — the skills keep it updated. But you can edit it to nudge priorities.

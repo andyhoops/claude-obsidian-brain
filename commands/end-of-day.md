@@ -4,13 +4,15 @@ Today's date: `!date +%Y-%m-%d`
 
 Process the Scratch Pad inbox for end-of-day filing. Follow each step below in order.
 
-## Step 1: Read Scratch Pad
+## Step 1: Read Scratch Pad & Mobile Inbox
 
-Read `Scratch Pad.md` at the vault root. If it is empty or contains only whitespace, stop here and tell me there's nothing to process.
+Read `Scratch Pad.md` at the vault root. Also check the **"Mobile Inbox"** Google Tasks list (`your-email@example.com`) for any quick-capture notes from mobile. Read each task's title and notes — treat them exactly like Scratch Pad entries for the steps below. After processing, mark each Mobile Inbox task as complete to clear the list.
+
+If both sources are empty, stop here and tell me there's nothing to process.
 
 ## Step 2: Extract Action Items
 
-Identify any **actionable tasks** in the scratch pad — things that need to be done, followed up on, scheduled, or decided. Append them to `Task Board.md` using this format:
+Identify any **actionable tasks** in the scratch pad and mobile inbox — things that need to be done, followed up on, scheduled, or decided. Append them to `Task Board.md` using this format:
 
 ```
 ## YYYY-MM-DD
@@ -38,7 +40,7 @@ Create or update the appropriate file under `Filing Cabinet/` based on topic:
 - Research → Filing Cabinet/Research/<topic>.md
 See Filing Cabinet/README.md for guidance on organizing your categories. -->
 
-Use Obsidian conventions: wiki-links `[[like this]]`, tags, and frontmatter where appropriate. If the scratch pad content is purely action-oriented with no standalone reference knowledge, skip this step and note that in the summary.
+Use Obsidian conventions: wiki-links `[[like this]]`, tags, and frontmatter where appropriate. If the scratch pad and mobile inbox content is purely action-oriented with no standalone reference knowledge, skip this step and note that in the summary.
 
 ## Step 4: Update Daily Note
 

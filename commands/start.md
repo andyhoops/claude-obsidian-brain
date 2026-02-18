@@ -14,22 +14,37 @@ derive the sibling path (e.g., ../other-vault), and read Task Board.md,
 .claude/context.md, and Daily Notes/ from both. Label items [Work] / [Personal]
 in the briefing. Both vaults should share the same folder structure. -->
 
-## Step 1: Check Context Memory
+## Step 1: Check Mobile Inbox
+
+Use the Google Workspace MCP to list all tasks from the **"Mobile Inbox"** Google Tasks list (`your-email@example.com`). This is a quick-capture inbox used from mobile throughout the day.
+
+- Read each task's title and notes
+- These are informal scratch-pad-style notes — treat them exactly like Scratch Pad entries (extract actions, identify knowledge to file)
+- Include any items found in the briefing under a **From mobile inbox:** section
+- After processing, mark each Mobile Inbox task as complete to clear the list
+
+If the list is empty, skip and move on.
+
+<!-- SETUP: Create a "Mobile Inbox" task list in Google Tasks and add a shortcut
+to it on your phone's home screen. This gives you a quick-capture surface that
+feeds into the same processing pipeline as Scratch Pad.md. -->
+
+## Step 2: Check Context Memory
 
 Read `.claude/context.md`. This has carry-forward context from previous sessions — priorities, open threads, and recent activity. Use it to frame today's briefing.
 
-## Step 2: Review Task Board
+## Step 3: Review Task Board
 
 Read `Task Board.md`. Summarize what's on my plate:
 - Group tasks by theme or category
 - Flag anything that looks time-sensitive or overdue based on when it was filed
 - Note how many open items there are total
 
-## Step 3: Check Yesterday's Daily Note
+## Step 4: Check Yesterday's Daily Note
 
 Find the most recent daily note before today in `Daily Notes/`. Read it for context on what happened yesterday — what was processed, what actions were taken, any loose ends.
 
-## Step 4: Check Google Calendar
+## Step 5: Check Google Calendar
 
 Use the Google Workspace MCP to pull today's events from my primary calendar (`your-email@example.com`). Also glance at the next 2 working days so we can flag anything looming.
 
@@ -41,7 +56,7 @@ Use the Google Workspace MCP to pull today's events from my primary calendar (`y
 
 Use this calendar data to inform priority-setting: if I have a meeting on a topic, related prep tasks should be prioritised. If my day is meeting-heavy, flag that I'll have limited deep-work time. Customer-facing meetings should generally rank above internal ones.
 
-## Step 5: Scan Gmail for Actions
+## Step 6: Scan Gmail for Actions
 
 Use the Google Workspace MCP to scan my Gmail for missed actions. Search the last 7 days of inbox and sent mail. Look for:
 
@@ -56,9 +71,9 @@ Use the Google Workspace MCP to scan my Gmail for missed actions. Search the las
 
 De-duplicate against existing Task Board items and calendar events. Label actionable items with `[Gmail]` in the briefing.
 
-## Step 6: Pull Google Tasks
+## Step 7: Pull Google Tasks
 
-Use the Google Workspace MCP to list all tasks from my Google Tasks lists. For each task:
+Use the Google Workspace MCP to list all tasks from my Google Tasks lists (excluding Mobile Inbox, already processed in Step 1). For each task:
 
 - Note the title, due date (if any), and which task list it belongs to
 - Cross-reference against the Task Board — flag any that are already tracked (duplicates)
@@ -67,7 +82,7 @@ Use the Google Workspace MCP to list all tasks from my Google Tasks lists. For e
 
 **Two-way sync:** When presenting the briefing, note any items on the Task Board that appear to match completed Google Tasks (or vice versa) so we can reconcile them.
 
-## Step 7: Scan for Time-Sensitive Items
+## Step 8: Scan for Time-Sensitive Items
 
 Check for anything that implies a deadline or urgency:
 - Tasks mentioning specific days ("Monday", "by EOD", "this week")
@@ -75,7 +90,7 @@ Check for anything that implies a deadline or urgency:
 - Cross-reference tasks with today's calendar — if a meeting relates to a task, flag it as prep-needed
 - Check `Meetings/` for today's date in filenames for any pre-written agendas
 
-## Step 8: Present the Briefing
+## Step 9: Present the Briefing
 
 Give me a morning briefing in this format:
 
@@ -107,7 +122,7 @@ Give me a morning briefing in this format:
 
 Keep priorities to a reasonable number. If there are more than 5-6 items, group the less urgent ones under an "Also on the radar" section so I'm not overwhelmed.
 
-## Step 9: Update Daily Note
+## Step 10: Update Daily Note
 
 Create today's daily note at `Daily Notes/YYYY-MM-DD.md` if it doesn't exist (with a `# YYYY-MM-DD` heading). Append:
 
