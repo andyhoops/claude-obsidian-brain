@@ -122,17 +122,19 @@ Give me a morning briefing in this format:
 
 Keep priorities to a reasonable number. If there are more than 5-6 items, group the less urgent ones under an "Also on the radar" section so I'm not overwhelmed.
 
-## Step 10: Update Daily Note
+## Step 10: Write Briefing to Daily Note
 
-Create today's daily note at `Daily Notes/YYYY-MM-DD.md` if it doesn't exist (with a `# YYYY-MM-DD` heading). Append:
+Create today's daily note at `Daily Notes/YYYY-MM-DD.md` if it doesn't exist (with a `# YYYY-MM-DD` heading).
+
+**Immediately after presenting the briefing** (do not wait for my response), write the full briefing text to the daily note under a `### Morning Briefing — HH:MM` section. Include the complete content — today's calendar, carry-forward, on your plate, and heads up — exactly as presented in the chat.
+
+After I respond and confirm my priorities for the day, append a `**Priorities confirmed:**` line directly below the briefing content in that same section:
 
 ```
-### Start of Day — HH:MM
-
-**Priorities set:**
+**Priorities confirmed:**
 - Priority 1
 - Priority 2
 - ...
 ```
 
-Wait until after I respond to the briefing so you can capture my actual confirmed priorities, not just your suggestions.
+This captures the full picture in the vault — what the day looks like, what's on the plate, and what I've committed to — so it can be referenced throughout the day and summarised at end-of-day.

@@ -42,20 +42,34 @@ See Filing Cabinet/README.md for guidance on organizing your categories. -->
 
 Use Obsidian conventions: wiki-links `[[like this]]`, tags, and frontmatter where appropriate. If the scratch pad and mobile inbox content is purely action-oriented with no standalone reference knowledge, skip this step and note that in the summary.
 
-## Step 4: Update Daily Note
+## Step 4: Write Day Summary to Daily Note
 
-Append a processing summary to `Daily Notes/YYYY-MM-DD.md` (using today's date). Use this format:
+First, read the existing `Daily Notes/YYYY-MM-DD.md` to understand what the day looked like — the morning briefing, any sync entries, and any meetings or actions recorded. Then append a `## Day Summary` section that consolidates everything into a clean, skimmable record of what actually happened.
 
 ```
-## End-of-Day Processing
+## Day Summary
 
-**Actions filed:** <count> items added to Task Board
-**Knowledge filed:** <brief list of where knowledge was filed, or "None — all items were actionable">
-**Google Tasks synced:** <count> completed, <count> new pulled in (or "No changes")
-**Context carried forward:** <one-line summary of what's top-of-mind>
+**Accomplished today:**
+- Concrete things completed or moved forward (cross-reference Task Board `[x]` items from today; also pull from scratch pad and sync entries)
+- Be factual and specific — "Submitted Versant RFP" not "worked on RFP"
+
+**Key meetings:**
+- Meeting name — one-line note on outcome, decision, or next step (skip routine standups unless something notable came up)
+
+**Carried forward:**
+- Open items that were on the plate today but not completed
+- Keep concise — these will feed the next day's morning briefing
+
+**Filed/noted:**
+- Any knowledge or reference material filed to the vault today (or "Nothing filed")
+
+**EOD stats:**
+Actions filed: <count> | Knowledge filed: <count or "None"> | Google Tasks: <X> completed, <X> new
 ```
 
 If the daily note doesn't exist yet, create it with a top-level heading `# YYYY-MM-DD` before appending.
+
+The morning briefing and any sync entries are retained above this section as raw context. The Day Summary is the canonical "what happened" record for future reference.
 
 ## Step 5: Sync Google Tasks
 

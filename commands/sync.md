@@ -99,6 +99,10 @@ Format:
 ```
 ### Sync — HH:MM
 
+**Progress since morning:**
+- List anything completed or meaningfully progressed since the morning briefing (cross-reference Task Board `[x]` items added today, and anything mentioned as done in the scratch pad or meetings)
+- If nothing has changed yet, say "Nothing completed yet"
+
 **From scratch pad / mobile inbox:**
 - Brief summary of what was captured (or "Nothing new")
 
