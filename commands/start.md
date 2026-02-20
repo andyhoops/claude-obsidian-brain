@@ -122,6 +122,8 @@ Give me a morning briefing in this format:
 
 Keep priorities to a reasonable number. If there are more than 5-6 items, group the less urgent ones under an "Also on the radar" section so I'm not overwhelmed.
 
+**Important:** Every item listed under `## Current Priorities` in context.md must appear somewhere in the briefing — either in the main task list or in "Also on the radar". Nothing from Current Priorities should be silently dropped, even on busy days with many competing items.
+
 ## Step 10: Write Briefing to Daily Note
 
 Create today's daily note at `Daily Notes/YYYY-MM-DD.md` if it doesn't exist (with a `# YYYY-MM-DD` heading).
