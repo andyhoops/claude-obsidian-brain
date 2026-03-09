@@ -15,7 +15,7 @@ There is no build system, test suite, linter, or source code. All content is Mar
   - **Projects/** — Project notes, decisions, and reference material
   <!-- CUSTOMIZATION: Add your own categories here. Examples:
   - **Products/** — Product documentation organized by product line
-  - **Customers/** — Customer documentation and contacts
+  - **Companies/** — Company/customer pages. Each company gets a page with notes, contacts, and context. Add a `customer` tag in frontmatter to pages for paying customers (enables filtering).
   - **Research/** — Research notes and references
   -->
 - **Daily Notes/** — Date-stamped daily entries (format: `YYYY-MM-DD.md`)
